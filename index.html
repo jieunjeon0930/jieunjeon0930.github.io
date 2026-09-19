@@ -8,14 +8,14 @@
 
   <style>
     :root {
-      --bg: #f8f8f5;
-      --white: #ffffff;
-      --text: #242522;
-      --muted: #73766f;
+      --bg: #fafaf8;
+      --text: #252724;
+      --muted: #747872;
+      --light-muted: #969a94;
       --line: #dedfd9;
-      --accent: #66756b;
-      --accent-light: #e9ede9;
-      --dark: #303630;
+      --accent: #68766c;
+      --soft-accent: #eef1ed;
+      --dark: #303530;
     }
 
     * {
@@ -45,7 +45,7 @@
     }
 
     .container {
-      width: min(1080px, 88%);
+      width: min(860px, 88%);
       margin: 0 auto;
     }
 
@@ -58,35 +58,34 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(248, 248, 245, 0.94);
+      background: rgba(250, 250, 248, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
-      min-height: 72px;
+      height: 68px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      text-decoration: none;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px;
-      letter-spacing: 0.2px;
+      font-size: 18px;
+      text-decoration: none;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
     }
 
     .nav-links a {
-      text-decoration: none;
-      font-size: 13px;
       color: var(--muted);
-      transition: 0.2s;
+      font-size: 12px;
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -99,134 +98,130 @@
     ========================= */
 
     .hero {
-      min-height: 560px;
-      display: flex;
-      align-items: center;
+      padding: 115px 0 100px;
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 80px;
-      align-items: center;
-      width: 100%;
-      padding: 95px 0;
-    }
-
     .hero-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2.2px;
+      margin-bottom: 22px;
       color: var(--accent);
-      margin-bottom: 25px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: clamp(52px, 7vw, 82px);
-      line-height: 1;
       margin: 0;
-      letter-spacing: -2px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(50px, 7vw, 68px);
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      line-height: 1.05;
     }
 
     .korean-name {
       display: block;
-      font-family: "Noto Sans KR", sans-serif;
-      font-size: 20px;
-      letter-spacing: 4px;
+      margin-top: 14px;
       color: var(--muted);
-      margin-top: 22px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 17px;
       font-weight: 400;
+      letter-spacing: 3px;
     }
 
     .hero-position {
-      margin-top: 35px;
+      margin-top: 30px;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
+      font-size: 14px;
+      line-height: 1.9;
     }
 
     .hero-position strong {
       color: var(--text);
+      font-size: 15px;
       font-weight: 500;
     }
 
 
-    /* Research focus box */
+    /* =========================
+       RESEARCH INTERESTS
+    ========================= */
 
-    .focus-box {
-      border-left: 1px solid var(--line);
-      padding-left: 55px;
-    }
-
-    .focus-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .focus-item {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(25px, 3vw, 35px);
-      line-height: 1.25;
-      padding: 23px 0;
+    .research-interests {
+      margin-top: 58px;
+      padding-top: 27px;
       border-top: 1px solid var(--line);
     }
 
-    .focus-item:last-child {
-      border-bottom: 1px solid var(--line);
+    .research-heading {
+      margin-bottom: 19px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
-    .focus-number {
-      display: block;
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      color: var(--accent);
-      margin-bottom: 7px;
+    .research-heading span {
+      margin-left: 7px;
+      color: var(--light-muted);
+      font-size: 11px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .research-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .research-item {
+      padding: 9px 15px;
+      background: var(--soft-accent);
+      border-radius: 2px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
     }
 
 
     /* =========================
-       GENERAL SECTIONS
+       GENERAL SECTION
     ========================= */
 
     section {
-      padding: 100px 0;
+      padding: 85px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .section-heading {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 50px;
-      margin-bottom: 55px;
+    .section-header {
+      margin-bottom: 42px;
     }
 
     .section-number {
-      font-size: 11px;
-      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 10px;
       color: var(--accent);
-      padding-top: 9px;
+      font-size: 10px;
+      letter-spacing: 1.8px;
     }
 
     h2 {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
+      font-size: 35px;
       font-weight: 400;
-      font-size: clamp(34px, 4vw, 46px);
       line-height: 1.2;
     }
 
     .ko-heading {
-      font-family: "Noto Sans KR", sans-serif;
-      font-size: 14px;
       color: var(--muted);
-      margin-left: 12px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 13px;
       font-weight: 400;
     }
 
@@ -235,15 +230,11 @@
        EDUCATION
     ========================= */
 
-    .education-list {
-      margin-left: 300px;
-    }
-
     .education-item {
       display: grid;
-      grid-template-columns: 155px 1fr;
-      gap: 30px;
-      padding: 30px 0;
+      grid-template-columns: 125px 1fr;
+      gap: 25px;
+      padding: 27px 0;
       border-top: 1px solid var(--line);
     }
 
@@ -252,27 +243,26 @@
     }
 
     .edu-year {
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.5px;
       padding-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
     }
 
     .edu-degree {
+      margin-bottom: 5px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
-      margin-bottom: 6px;
+      font-size: 19px;
     }
 
     .edu-school {
-      color: var(--muted);
-      font-size: 14px;
+      color: #555953;
+      font-size: 13px;
     }
 
     .edu-korean {
-      color: #898b85;
-      font-size: 13px;
       margin-top: 5px;
+      color: var(--light-muted);
+      font-size: 12px;
     }
 
 
@@ -280,15 +270,8 @@
        PUBLICATIONS
     ========================= */
 
-    .publications {
-      margin-left: 300px;
-    }
-
     .publication {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 35px;
-      padding: 38px 0;
+      padding: 31px 0 34px;
       border-top: 1px solid var(--line);
     }
 
@@ -296,35 +279,41 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .pub-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 13px;
+    }
+
     .pub-year {
       color: var(--muted);
-      font-size: 13px;
-      padding-top: 5px;
+      font-size: 11px;
     }
 
     .pub-tag {
-      display: inline-block;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
+      padding: 3px 8px;
+      background: var(--soft-accent);
       color: var(--accent);
-      background: var(--accent-light);
-      padding: 4px 9px;
-      margin-bottom: 13px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
 
     .pub-title {
+      max-width: 740px;
+      margin-bottom: 12px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
+      font-size: 19px;
       line-height: 1.5;
-      margin-bottom: 13px;
-      max-width: 700px;
     }
 
     .pub-authors {
-      color: #575a55;
-      font-size: 13px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
+      color: #565a54;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .pub-authors strong {
@@ -334,16 +323,17 @@
 
     .pub-journal {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .pub-link {
       display: inline-block;
-      margin-top: 16px;
-      text-decoration: none;
-      font-size: 12px;
+      margin-top: 14px;
+      padding-bottom: 1px;
       border-bottom: 1px solid var(--text);
-      padding-bottom: 2px;
+      font-size: 11px;
+      text-decoration: none;
     }
 
     .pub-link:hover {
@@ -357,47 +347,48 @@
     ========================= */
 
     .contact-section {
+      padding: 80px 0;
       background: var(--dark);
-      color: #f5f5f0;
+      color: #f5f5f1;
       border-bottom: none;
     }
 
     .contact-section .section-number {
-      color: #aab5ac;
+      color: #aab3ab;
     }
 
     .contact-section .ko-heading {
-      color: #aeb5ae;
+      color: #aeb5af;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 50px;
-      margin-top: 55px;
+    .contact-content {
+      padding-top: 4px;
     }
 
-    .contact-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #aeb5ae;
-    }
-
-    .contact-info {
+    .contact-name {
+      margin-bottom: 5px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
+      font-size: 19px;
+    }
+
+    .contact-affiliation {
+      margin-bottom: 22px;
+      color: #b7bdb7;
+      font-size: 12px;
       line-height: 1.8;
     }
 
-    .contact-info a {
-      color: #f5f5f0;
+    .contact-email {
+      display: inline-block;
+      color: #f5f5f1;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
       text-decoration: none;
-      border-bottom: 1px solid #8d958e;
+      border-bottom: 1px solid #8c958d;
     }
 
-    .contact-info a:hover {
-      border-color: white;
+    .contact-email:hover {
+      border-color: #ffffff;
     }
 
 
@@ -406,16 +397,17 @@
     ========================= */
 
     footer {
+      padding: 25px 0;
       background: var(--dark);
-      color: #8f988f;
-      padding: 35px 0;
-      font-size: 11px;
-      border-top: 1px solid #485048;
+      border-top: 1px solid #484e48;
+      color: #909990;
+      font-size: 10px;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
+      gap: 20px;
     }
 
 
@@ -423,79 +415,52 @@
        MOBILE
     ========================= */
 
-    @media (max-width: 800px) {
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        padding: 75px 0;
-      }
-
-      .focus-box {
-        border-left: none;
-        padding-left: 0;
-      }
-
-      .section-heading {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .education-list,
-      .publications {
-        margin-left: 0;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-
-
-    @media (max-width: 550px) {
+    @media (max-width: 650px) {
 
       .container {
-        width: 90%;
+        width: 88%;
       }
 
       .nav-inner {
-        min-height: 65px;
+        height: 62px;
       }
 
-      .nav-links a:nth-child(2) {
-        display: none;
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 80px 0 70px;
       }
 
       h1 {
-        font-size: 52px;
+        font-size: 48px;
+      }
+
+      .research-interests {
+        margin-top: 45px;
       }
 
       section {
-        padding: 75px 0;
+        padding: 65px 0;
       }
 
-      .education-item,
-      .publication {
+      h2 {
+        font-size: 31px;
+      }
+
+      .education-item {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 7px;
       }
 
       .footer-inner {
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
       }
     }
 
@@ -531,42 +496,45 @@
 
 <header class="hero" id="research">
 
-  <div class="container hero-grid">
+  <div class="container">
 
-    <div>
+    <div class="hero-label">
+      Science Education Researcher
+    </div>
 
-      <div class="hero-label">
-        Science Education Researcher
-      </div>
+    <h1>
+      Jieun Jeon
+      <span class="korean-name">전지은</span>
+    </h1>
 
-      <h1>
-        Jieun Jeon
-        <span class="korean-name">전지은</span>
-      </h1>
+    <div class="hero-position">
 
-      <div class="hero-position">
-        <strong>Ph.D. Student in Science Education</strong><br>
-        Ewha Womans University<br>
-        이화여자대학교 과학교육학과 박사과정
-      </div>
+      <strong>Ph.D. Student in Science Education</strong><br>
+
+      Ewha Womans University<br>
+
+      이화여자대학교 과학교육학과 박사과정
 
     </div>
 
 
-    <div class="focus-box">
+    <div class="research-interests">
 
-      <div class="focus-label">
-        Research Interests · 연구 관심 분야
+      <div class="research-heading">
+        Research Interests
+        <span>연구 관심 분야</span>
       </div>
 
-      <div class="focus-item">
-        <span class="focus-number">01</span>
-        Socioscientific Issues
-      </div>
+      <div class="research-list">
 
-      <div class="focus-item">
-        <span class="focus-number">02</span>
-        Epistemic Injustice
+        <div class="research-item">
+          Socioscientific Issues
+        </div>
+
+        <div class="research-item">
+          Epistemic Injustice
+        </div>
+
       </div>
 
     </div>
@@ -583,11 +551,11 @@
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <div class="section-number">
+      <span class="section-number">
         01
-      </div>
+      </span>
 
       <h2>
         Education
@@ -597,58 +565,52 @@
     </div>
 
 
-    <div class="education-list">
+    <div class="education-item">
 
+      <div class="edu-year">
+        2024 — Present
+      </div>
 
-      <div class="education-item">
+      <div>
 
-        <div class="edu-year">
-          2024 — Present
+        <div class="edu-degree">
+          Ph.D. Student in Science Education
         </div>
 
-        <div>
+        <div class="edu-school">
+          Ewha Womans University
+        </div>
 
-          <div class="edu-degree">
-            Ph.D. Student in Science Education
-          </div>
-
-          <div class="edu-school">
-            Ewha Womans University
-          </div>
-
-          <div class="edu-korean">
-            이화여자대학교 과학교육학과 박사과정
-          </div>
-
+        <div class="edu-korean">
+          이화여자대학교 과학교육학과 박사과정
         </div>
 
       </div>
 
+    </div>
 
-      <div class="education-item">
 
-        <div class="edu-year">
-          2020 — 2023
+    <div class="education-item">
+
+      <div class="edu-year">
+        2020 — 2023
+      </div>
+
+      <div>
+
+        <div class="edu-degree">
+          B.S. in Science Education
         </div>
 
-        <div>
+        <div class="edu-school">
+          Physics Education · Ewha Womans University
+        </div>
 
-          <div class="edu-degree">
-            B.S. in Science Education
-          </div>
-
-          <div class="edu-school">
-            Physics Education · Ewha Womans University
-          </div>
-
-          <div class="edu-korean">
-            이화여자대학교 과학교육과 물리교육전공
-          </div>
-
+        <div class="edu-korean">
+          이화여자대학교 과학교육과 물리교육전공
         </div>
 
       </div>
-
 
     </div>
 
@@ -664,11 +626,11 @@
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <div class="section-number">
+      <span class="section-number">
         02
-      </div>
+      </span>
 
       <h2>
         Publications
@@ -678,88 +640,83 @@
     </div>
 
 
-    <div class="publications">
 
+    <!-- PUBLICATION 1 -->
 
-      <!-- PUBLICATION 1 -->
+    <article class="publication">
 
-      <article class="publication">
+      <div class="pub-top">
 
-        <div class="pub-year">
+        <span class="pub-year">
           2025
-        </div>
+        </span>
 
-        <div>
+        <span class="pub-tag">
+          First Author
+        </span>
 
-          <div class="pub-tag">
-            First Author
-          </div>
+      </div>
 
-          <div class="pub-title">
-            Exploring Pre-service and In-service Science Teachers’
-            Perceptions of Risk Literacy in the Context of
-            Socioscientific Issues
-          </div>
+      <div class="pub-title">
+        Exploring Pre-service and In-service Science Teachers’
+        Perceptions of Risk Literacy in the Context of
+        Socioscientific Issues
+      </div>
 
-          <div class="pub-authors">
-            <strong>Jieun Jeon</strong>, Yoonbi Kim,
-            Yohan Hwang, & Hyunju Lee
-          </div>
+      <div class="pub-authors">
+        <strong>Jieun Jeon</strong>, Yoonbi Kim,
+        Yohan Hwang, & Hyunju Lee
+      </div>
 
-          <div class="pub-journal">
-            <em>Journal of Research in Curriculum & Instruction</em>,
-            29(4), 257–270.
-          </div>
+      <div class="pub-journal">
+        <em>Journal of Research in Curriculum & Instruction</em>,
+        29(4), 257–270.
+      </div>
 
-          <a
-            class="pub-link"
-            href="https://doi.org/10.24231/rici.2025.29.4.257"
-            target="_blank"
-            rel="noopener noreferrer">
-            View article ↗
-          </a>
+      <a
+        class="pub-link"
+        href="https://doi.org/10.24231/rici.2025.29.4.257"
+        target="_blank"
+        rel="noopener noreferrer">
+        View article ↗
+      </a>
 
-        </div>
-
-      </article>
+    </article>
 
 
 
-      <!-- PUBLICATION 2 -->
+    <!-- PUBLICATION 2 -->
 
-      <article class="publication">
+    <article class="publication">
 
-        <div class="pub-year">
+      <div class="pub-top">
+
+        <span class="pub-year">
           2025
-        </div>
+        </span>
 
-        <div>
+        <span class="pub-tag">
+          Co-author
+        </span>
 
-          <div class="pub-tag">
-            Co-author
-          </div>
+      </div>
 
-          <div class="pub-title">
-            Development of a Scale for Measuring Perceived
-            Risk Literacy in the Context of Socioscientific Issues
-          </div>
+      <div class="pub-title">
+        Development of a Scale for Measuring Perceived
+        Risk Literacy in the Context of Socioscientific Issues
+      </div>
 
-          <div class="pub-authors">
-            Hyunju Lee, Mikyung Sim, Yohan Hwang,
-            <strong>Jieun Jeon</strong>, & Jiwon Kong
-          </div>
+      <div class="pub-authors">
+        Hyunju Lee, Mikyung Sim, Yohan Hwang,
+        <strong>Jieun Jeon</strong>, & Jiwon Kong
+      </div>
 
-          <div class="pub-journal">
-            <em>Journal of the Korean Association for Science Education</em>,
-            45(3), 299–310.
-          </div>
+      <div class="pub-journal">
+        <em>Journal of the Korean Association for Science Education</em>,
+        45(3), 299–310.
+      </div>
 
-        </div>
-
-      </article>
-
-
-    </div>
+    </article>
 
   </div>
 
@@ -773,11 +730,11 @@
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-header">
 
-      <div class="section-number">
+      <span class="section-number">
         03
-      </div>
+      </span>
 
       <h2>
         Contact
@@ -787,25 +744,23 @@
     </div>
 
 
-    <div class="contact-grid">
+    <div class="contact-content">
 
-      <div class="contact-label">
-        Email
+      <div class="contact-name">
+        Jieun Jeon · 전지은
       </div>
 
-      <div class="contact-info">
-
-        <a href="mailto:jieunjeon@ewha.ac.kr">
-          jieunjeon@ewha.ac.kr
-        </a>
-
-        <br><br>
-
+      <div class="contact-affiliation">
         Department of Science Education<br>
         Ewha Womans University<br>
         이화여자대학교 과학교육학과
-
       </div>
+
+      <a
+        class="contact-email"
+        href="mailto:jieunjeon@ewha.ac.kr">
+        jieunjeon@ewha.ac.kr
+      </a>
 
     </div>
 

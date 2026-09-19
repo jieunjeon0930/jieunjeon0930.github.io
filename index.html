@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jieun Jeon | Science Education</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Arial, sans-serif;
+      color: #292929;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(900px, 88%);
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    nav {
+      border-bottom: 1px solid #eeeeee;
+      background: rgba(255,255,255,0.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    /* Hero */
+    header {
+      padding: 105px 0 90px;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .eyebrow {
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(46px, 8vw, 72px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      color: #1f1f1f;
+    }
+
+    .position {
+      font-size: 19px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 720px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      font-weight: 400;
+      margin: 0 0 42px;
+      color: #222;
+    }
+
+    /* Research */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .research-card {
+      border: 1px solid #e4e4e4;
+      padding: 30px;
+      min-height: 145px;
+    }
+
+    .research-number {
+      color: #999;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .research-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      color: #222;
+    }
+
+    /* Education */
+    .education-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 30px;
+      padding: 25px 0;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .education-item:last-child {
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .year {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .degree {
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 4px;
+    }
+
+    .school {
+      color: #666;
+    }
+
+    /* Publications */
+    .publication {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 25px;
+      padding: 30px 0;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .publication:last-child {
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .pub-year {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .pub-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1.5;
+      color: #222;
+      margin-bottom: 9px;
+    }
+
+    .authors {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .journal {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .doi {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #555;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Contact */
+    .contact-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      color: #444;
+    }
+
+    .contact-text a {
+      color: #222;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 35px 0 50px;
+      color: #999;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      header {
+        padding: 75px 0 65px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="name">Jieun Jeon</a>
+
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+<header>
+  <div class="container">
+
+    <div class="eyebrow">Science Education Researcher</div>
+
+    <h1>Jieun Jeon</h1>
+
+    <div class="position">
+      Ph.D. Student in Science Education<br>
+      Ewha Womans University
+    </div>
+
+    <div class="intro">
+      My research interests center on
+      <strong>socioscientific issues (SSI)</strong> and
+      <strong>epistemic injustice</strong>, with a particular interest
+      in how science education can support learners in engaging with
+      diverse knowledge, perspectives, and voices in complex
+      socioscientific contexts.
+    </div>
+
+  </div>
+</header>
+
+
+<section id="research">
+  <div class="container">
+
+    <h2>Research Interests</h2>
+
+    <div class="research-grid">
+
+      <div class="research-card">
+        <div class="research-number">01</div>
+        <div class="research-title">
+          Socioscientific Issues (SSI)
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-number">02</div>
+        <div class="research-title">
+          Epistemic Injustice
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section id="education">
+  <div class="container">
+
+    <h2>Education</h2>
+
+    <div class="education-item">
+      <div class="year">2024–Present</div>
+
+      <div>
+        <div class="degree">
+          Ph.D. Student in Science Education
+        </div>
+
+        <div class="school">
+          Ewha Womans University
+        </div>
+      </div>
+    </div>
+
+
+    <div class="education-item">
+      <div class="year">2020–2023</div>
+
+      <div>
+        <div class="degree">
+          B.S. in Science Education
+        </div>
+
+        <div class="school">
+          Physics Education · Ewha Womans University
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="publications">
+  <div class="container">
+
+    <h2>Publications</h2>
+
+
+    <div class="publication">
+
+      <div class="pub-year">2025</div>
+
+      <div>
+
+        <div class="pub-title">
+          Exploring Pre-service and In-service Science Teachers’
+          Perceptions of Risk Literacy in the Context of
+          Socioscientific Issues
+        </div>
+
+        <div class="authors">
+          <strong>Jieun Jeon</strong>, Yoonbi Kim,
+          Yohan Hwang, & Hyunju Lee
+        </div>
+
+        <div class="journal">
+          <em>Journal of Research in Curriculum & Instruction</em>,
+          29(4), 257–270.
+        </div>
+
+        <a class="doi"
+           href="https://doi.org/10.24231/rici.2025.29.4.257"
+           target="_blank">
+           DOI
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="publication">
+
+      <div class="pub-year">2025</div>
+
+      <div>
+
+        <div class="pub-title">
+          Development of a Scale for Measuring Perceived Risk Literacy
+          in the Context of Socioscientific Issues
+        </div>
+
+        <div class="authors">
+          Hyunju Lee, Mikyung Sim, Yohan Hwang,
+          <strong>Jieun Jeon</strong>, & Jiwon Kong
+        </div>
+
+        <div class="journal">
+          <em>Journal of the Korean Association for Science Education</em>,
+          45(3), 299–310.
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="container">
+
+    <h2>Contact</h2>
+
+    <div class="contact-text">
+      Jieun Jeon<br>
+      Department of Science Education<br>
+      Ewha Womans University<br><br>
+
+      <a href="mailto:jieunjeon@ewha.ac.kr">
+        jieunjeon@ewha.ac.kr
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    © 2026 Jieun Jeon
+  </div>
+</footer>
+
+
+</body>
+</html>

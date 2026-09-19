@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jieun Jeon | Science Education</title>
+  <title>Jieun Jeon | 전지은</title>
 
   <style>
+    :root {
+      --bg: #f8f8f5;
+      --white: #ffffff;
+      --text: #242522;
+      --muted: #73766f;
+      --line: #dedfd9;
+      --accent: #66756b;
+      --accent-light: #e9ede9;
+      --dark: #303630;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -17,267 +28,492 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Arial, sans-serif;
-      color: #292929;
-      background: #ffffff;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
       line-height: 1.7;
     }
 
+    a {
+      color: inherit;
+    }
+
     .container {
-      width: min(900px, 88%);
+      width: min(1080px, 88%);
       margin: 0 auto;
     }
 
-    /* Navigation */
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
     nav {
-      border-bottom: 1px solid #eeeeee;
-      background: rgba(255,255,255,0.96);
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(248, 248, 245, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
-      height: 70px;
+      min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
-    .name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: #222;
+    .logo {
       text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      letter-spacing: 0.2px;
     }
 
     .nav-links {
       display: flex;
-      gap: 26px;
+      gap: 28px;
     }
 
     .nav-links a {
-      color: #555;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
-      color: #000;
+      color: var(--text);
     }
 
-    /* Hero */
-    header {
-      padding: 105px 0 90px;
-      border-bottom: 1px solid #eeeeee;
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
     }
 
-    .eyebrow {
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+      padding: 95px 0;
+    }
+
+    .hero-label {
       font-size: 12px;
-      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      color: var(--accent);
+      margin-bottom: 25px;
     }
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(46px, 8vw, 72px);
       font-weight: 400;
-      line-height: 1.1;
-      margin: 0 0 18px;
-      color: #1f1f1f;
+      font-size: clamp(52px, 7vw, 82px);
+      line-height: 1;
+      margin: 0;
+      letter-spacing: -2px;
     }
 
-    .position {
-      font-size: 19px;
-      color: #555;
-      margin-bottom: 30px;
+    .korean-name {
+      display: block;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 20px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      margin-top: 22px;
+      font-weight: 400;
     }
 
-    .intro {
-      max-width: 720px;
+    .hero-position {
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .hero-position strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+
+    /* Research focus box */
+
+    .focus-box {
+      border-left: 1px solid var(--line);
+      padding-left: 55px;
+    }
+
+    .focus-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .focus-item {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      color: #444;
-      line-height: 1.65;
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
+      padding: 23px 0;
+      border-top: 1px solid var(--line);
     }
 
-    /* Sections */
+    .focus-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .focus-number {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 7px;
+    }
+
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
     section {
-      padding: 80px 0;
-      border-bottom: 1px solid #eeeeee;
+      padding: 100px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 50px;
+      margin-bottom: 55px;
+    }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--accent);
+      padding-top: 9px;
     }
 
     h2 {
+      margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 31px;
       font-weight: 400;
-      margin: 0 0 42px;
-      color: #222;
+      font-size: clamp(34px, 4vw, 46px);
+      line-height: 1.2;
     }
 
-    /* Research */
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .ko-heading {
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      margin-left: 12px;
+      font-weight: 400;
     }
 
-    .research-card {
-      border: 1px solid #e4e4e4;
-      padding: 30px;
-      min-height: 145px;
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .education-list {
+      margin-left: 300px;
     }
 
-    .research-number {
-      color: #999;
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
-
-    .research-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      color: #222;
-    }
-
-    /* Education */
     .education-item {
       display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 155px 1fr;
       gap: 30px;
-      padding: 25px 0;
-      border-top: 1px solid #eeeeee;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
     }
 
     .education-item:last-child {
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid var(--line);
     }
 
-    .year {
-      color: #777;
+    .edu-year {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      padding-top: 3px;
+    }
+
+    .edu-degree {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .edu-school {
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .degree {
-      font-weight: 600;
-      color: #222;
-      margin-bottom: 4px;
+    .edu-korean {
+      color: #898b85;
+      font-size: 13px;
+      margin-top: 5px;
     }
 
-    .school {
-      color: #666;
+
+    /* =========================
+       PUBLICATIONS
+    ========================= */
+
+    .publications {
+      margin-left: 300px;
     }
 
-    /* Publications */
     .publication {
       display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 25px;
-      padding: 30px 0;
-      border-top: 1px solid #eeeeee;
+      grid-template-columns: 80px 1fr;
+      gap: 35px;
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
     }
 
     .publication:last-child {
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid var(--line);
     }
 
     .pub-year {
-      color: #888;
-      font-size: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 5px;
+    }
+
+    .pub-tag {
+      display: inline-block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 4px 9px;
+      margin-bottom: 13px;
     }
 
     .pub-title {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px;
+      font-size: 21px;
       line-height: 1.5;
-      color: #222;
-      margin-bottom: 9px;
+      margin-bottom: 13px;
+      max-width: 700px;
     }
 
-    .authors {
-      color: #555;
-      font-size: 14px;
+    .pub-authors {
+      color: #575a55;
+      font-size: 13px;
       margin-bottom: 5px;
     }
 
-    .journal {
-      color: #777;
-      font-size: 14px;
+    .pub-authors strong {
+      color: var(--text);
+      font-weight: 600;
     }
 
-    .doi {
-      display: inline-block;
-      margin-top: 8px;
+    .pub-journal {
+      color: var(--muted);
       font-size: 13px;
-      color: #555;
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
-    /* Contact */
-    .contact-text {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      color: #444;
-    }
-
-    .contact-text a {
-      color: #222;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-
-    /* Footer */
-    footer {
-      padding: 35px 0 50px;
-      color: #999;
+    .pub-link {
+      display: inline-block;
+      margin-top: 16px;
+      text-decoration: none;
       font-size: 12px;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 2px;
     }
 
-    @media (max-width: 650px) {
+    .pub-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-section {
+      background: var(--dark);
+      color: #f5f5f0;
+      border-bottom: none;
+    }
+
+    .contact-section .section-number {
+      color: #aab5ac;
+    }
+
+    .contact-section .ko-heading {
+      color: #aeb5ae;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+      margin-top: 55px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #aeb5ae;
+    }
+
+    .contact-info {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .contact-info a {
+      color: #f5f5f0;
+      text-decoration: none;
+      border-bottom: 1px solid #8d958e;
+    }
+
+    .contact-info a:hover {
+      border-color: white;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--dark);
+      color: #8f988f;
+      padding: 35px 0;
+      font-size: 11px;
+      border-top: 1px solid #485048;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
       .nav-links {
-        gap: 13px;
+        gap: 14px;
       }
 
       .nav-links a {
-        font-size: 12px;
+        font-size: 11px;
       }
 
-      header {
-        padding: 75px 0 65px;
+      .hero {
+        min-height: auto;
       }
 
-      .research-grid {
+      .hero-grid {
         grid-template-columns: 1fr;
+        gap: 60px;
+        padding: 75px 0;
       }
 
-      .education-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
+      .focus-box {
+        border-left: none;
+        padding-left: 0;
       }
 
-      .publication {
+      .section-heading {
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 10px;
+      }
+
+      .education-list,
+      .publications {
+        margin-left: 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+
+    @media (max-width: 550px) {
+
+      .container {
+        width: 90%;
+      }
+
+      .nav-inner {
+        min-height: 65px;
+      }
+
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+
+      h1 {
+        font-size: 52px;
       }
 
       section {
-        padding: 60px 0;
+        padding: 75px 0;
+      }
+
+      .education-item,
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 5px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
+
+
+<!-- NAVIGATION -->
 
 <nav>
   <div class="container nav-inner">
-    <a href="#" class="name">Jieun Jeon</a>
+
+    <a class="logo" href="#">
+      Jieun Jeon
+    </a>
 
     <div class="nav-links">
       <a href="#research">Research</a>
@@ -285,189 +521,316 @@
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
     </div>
+
   </div>
 </nav>
 
 
-<header>
-  <div class="container">
 
-    <div class="eyebrow">Science Education Researcher</div>
+<!-- HERO -->
 
-    <h1>Jieun Jeon</h1>
+<header class="hero" id="research">
 
-    <div class="position">
-      Ph.D. Student in Science Education<br>
-      Ewha Womans University
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="hero-label">
+        Science Education Researcher
+      </div>
+
+      <h1>
+        Jieun Jeon
+        <span class="korean-name">전지은</span>
+      </h1>
+
+      <div class="hero-position">
+        <strong>Ph.D. Student in Science Education</strong><br>
+        Ewha Womans University<br>
+        이화여자대학교 과학교육학과 박사과정
+      </div>
+
     </div>
 
-    <div class="intro">
-      My research interests center on
-      <strong>socioscientific issues (SSI)</strong> and
-      <strong>epistemic injustice</strong>, with a particular interest
-      in how science education can support learners in engaging with
-      diverse knowledge, perspectives, and voices in complex
-      socioscientific contexts.
+
+    <div class="focus-box">
+
+      <div class="focus-label">
+        Research Interests · 연구 관심 분야
+      </div>
+
+      <div class="focus-item">
+        <span class="focus-number">01</span>
+        Socioscientific Issues
+      </div>
+
+      <div class="focus-item">
+        <span class="focus-number">02</span>
+        Epistemic Injustice
+      </div>
+
     </div>
 
   </div>
+
 </header>
 
 
-<section id="research">
-  <div class="container">
 
-    <h2>Research Interests</h2>
-
-    <div class="research-grid">
-
-      <div class="research-card">
-        <div class="research-number">01</div>
-        <div class="research-title">
-          Socioscientific Issues (SSI)
-        </div>
-      </div>
-
-      <div class="research-card">
-        <div class="research-number">02</div>
-        <div class="research-title">
-          Epistemic Injustice
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
+<!-- EDUCATION -->
 
 <section id="education">
+
   <div class="container">
 
-    <h2>Education</h2>
+    <div class="section-heading">
 
-    <div class="education-item">
-      <div class="year">2024–Present</div>
-
-      <div>
-        <div class="degree">
-          Ph.D. Student in Science Education
-        </div>
-
-        <div class="school">
-          Ewha Womans University
-        </div>
+      <div class="section-number">
+        01
       </div>
+
+      <h2>
+        Education
+        <span class="ko-heading">학력</span>
+      </h2>
+
     </div>
 
 
-    <div class="education-item">
-      <div class="year">2020–2023</div>
+    <div class="education-list">
 
-      <div>
-        <div class="degree">
-          B.S. in Science Education
+
+      <div class="education-item">
+
+        <div class="edu-year">
+          2024 — Present
         </div>
 
-        <div class="school">
-          Physics Education · Ewha Womans University
+        <div>
+
+          <div class="edu-degree">
+            Ph.D. Student in Science Education
+          </div>
+
+          <div class="edu-school">
+            Ewha Womans University
+          </div>
+
+          <div class="edu-korean">
+            이화여자대학교 과학교육학과 박사과정
+          </div>
+
         </div>
+
       </div>
+
+
+      <div class="education-item">
+
+        <div class="edu-year">
+          2020 — 2023
+        </div>
+
+        <div>
+
+          <div class="edu-degree">
+            B.S. in Science Education
+          </div>
+
+          <div class="edu-school">
+            Physics Education · Ewha Womans University
+          </div>
+
+          <div class="edu-korean">
+            이화여자대학교 과학교육과 물리교육전공
+          </div>
+
+        </div>
+
+      </div>
+
+
     </div>
 
   </div>
+
 </section>
 
+
+
+<!-- PUBLICATIONS -->
 
 <section id="publications">
+
   <div class="container">
 
-    <h2>Publications</h2>
+    <div class="section-heading">
+
+      <div class="section-number">
+        02
+      </div>
+
+      <h2>
+        Publications
+        <span class="ko-heading">연구 논문</span>
+      </h2>
+
+    </div>
 
 
-    <div class="publication">
+    <div class="publications">
 
-      <div class="pub-year">2025</div>
 
-      <div>
+      <!-- PUBLICATION 1 -->
 
-        <div class="pub-title">
-          Exploring Pre-service and In-service Science Teachers’
-          Perceptions of Risk Literacy in the Context of
-          Socioscientific Issues
+      <article class="publication">
+
+        <div class="pub-year">
+          2025
         </div>
 
-        <div class="authors">
-          <strong>Jieun Jeon</strong>, Yoonbi Kim,
-          Yohan Hwang, & Hyunju Lee
+        <div>
+
+          <div class="pub-tag">
+            First Author
+          </div>
+
+          <div class="pub-title">
+            Exploring Pre-service and In-service Science Teachers’
+            Perceptions of Risk Literacy in the Context of
+            Socioscientific Issues
+          </div>
+
+          <div class="pub-authors">
+            <strong>Jieun Jeon</strong>, Yoonbi Kim,
+            Yohan Hwang, & Hyunju Lee
+          </div>
+
+          <div class="pub-journal">
+            <em>Journal of Research in Curriculum & Instruction</em>,
+            29(4), 257–270.
+          </div>
+
+          <a
+            class="pub-link"
+            href="https://doi.org/10.24231/rici.2025.29.4.257"
+            target="_blank"
+            rel="noopener noreferrer">
+            View article ↗
+          </a>
+
         </div>
 
-        <div class="journal">
-          <em>Journal of Research in Curriculum & Instruction</em>,
-          29(4), 257–270.
+      </article>
+
+
+
+      <!-- PUBLICATION 2 -->
+
+      <article class="publication">
+
+        <div class="pub-year">
+          2025
         </div>
 
-        <a class="doi"
-           href="https://doi.org/10.24231/rici.2025.29.4.257"
-           target="_blank">
-           DOI
+        <div>
+
+          <div class="pub-tag">
+            Co-author
+          </div>
+
+          <div class="pub-title">
+            Development of a Scale for Measuring Perceived
+            Risk Literacy in the Context of Socioscientific Issues
+          </div>
+
+          <div class="pub-authors">
+            Hyunju Lee, Mikyung Sim, Yohan Hwang,
+            <strong>Jieun Jeon</strong>, & Jiwon Kong
+          </div>
+
+          <div class="pub-journal">
+            <em>Journal of the Korean Association for Science Education</em>,
+            45(3), 299–310.
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="section-number">
+        03
+      </div>
+
+      <h2>
+        Contact
+        <span class="ko-heading">연락처</span>
+      </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-label">
+        Email
+      </div>
+
+      <div class="contact-info">
+
+        <a href="mailto:jieunjeon@ewha.ac.kr">
+          jieunjeon@ewha.ac.kr
         </a>
 
-      </div>
-    </div>
+        <br><br>
 
-
-    <div class="publication">
-
-      <div class="pub-year">2025</div>
-
-      <div>
-
-        <div class="pub-title">
-          Development of a Scale for Measuring Perceived Risk Literacy
-          in the Context of Socioscientific Issues
-        </div>
-
-        <div class="authors">
-          Hyunju Lee, Mikyung Sim, Yohan Hwang,
-          <strong>Jieun Jeon</strong>, & Jiwon Kong
-        </div>
-
-        <div class="journal">
-          <em>Journal of the Korean Association for Science Education</em>,
-          45(3), 299–310.
-        </div>
+        Department of Science Education<br>
+        Ewha Womans University<br>
+        이화여자대학교 과학교육학과
 
       </div>
+
     </div>
 
   </div>
+
 </section>
 
 
-<section id="contact">
-  <div class="container">
 
-    <h2>Contact</h2>
-
-    <div class="contact-text">
-      Jieun Jeon<br>
-      Department of Science Education<br>
-      Ewha Womans University<br><br>
-
-      <a href="mailto:jieunjeon@ewha.ac.kr">
-        jieunjeon@ewha.ac.kr
-      </a>
-    </div>
-
-  </div>
-</section>
-
+<!-- FOOTER -->
 
 <footer>
-  <div class="container">
-    © 2026 Jieun Jeon
+
+  <div class="container footer-inner">
+
+    <div>
+      © 2026 Jieun Jeon
+    </div>
+
+    <div>
+      Science Education · Ewha Womans University
+    </div>
+
   </div>
+
 </footer>
 
 
